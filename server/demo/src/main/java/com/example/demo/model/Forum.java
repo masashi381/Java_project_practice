@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 // JPAのエンティティであることを示すアノテーション
 @Entity
-// エンティティに対応するテーブル名を指定。　
+// エンティティに対応するテーブル名を指定。
 @Table(name = "forums")
 public class Forum {
   // エンティティの主キーを指定。

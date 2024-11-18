@@ -6,7 +6,7 @@
   </head>
   <body>
     <h2>New Post</h2>
-    <form th:action="@{/create}" th:object="${form}" method="post">
+    <form th:action="@{/create}" th:object="${forum}" method="post">
       <label>Title</label>
       <p><input type="text" th:field="*{title}" /></p>
 
