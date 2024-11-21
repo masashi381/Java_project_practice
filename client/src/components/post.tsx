@@ -23,7 +23,7 @@ const Post: React.FC = () => {
   const onSubmit: SubmitHandler<FormType> = async (data) => {
     console.log("post data", data);
     try {
-      await axios.post("http://localhost:8080/api/", data);
+      await axios.post("http://localhost:8080/api/create", data);
       console.log("Post created successfully!");
     } catch (error) {
       console.error("Error creating post: ", error);
