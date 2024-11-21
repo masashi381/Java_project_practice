@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type DataProps = {
   title: string;
@@ -18,14 +19,23 @@ const Home: React.FC = () => {
   }, []);
 
   console.log("data: ", fetchedData);
-  return fetchedData.map((data) => {
-    return (
-      <div key={data.id} className="flex border w-72">
-        <h2 className="mr-5">{data.title}</h2>
-        <p>{data.body}</p>
+  return (
+    <>
+      <div>
+        {fetchedData.map((data) => (
+          <div key={data.id} className="flex border w-64">
+            <h2 className="mr-4">{data.title}</h2>
+            <p>{data.body}</p>
+          </div>
+        ))}
       </div>
-    );
-  });
+      <div className="w-24 mt-2 ml-9">
+        <button className="border px-2 border-blue-400 ">
+          <Link to="/post">Go to Post</Link>
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default Home;
